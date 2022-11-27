@@ -5,8 +5,8 @@
 void setup() {
     Serial.begin(115200);
     homeSpan.setLogLevel(1);
-    Serial.begin(9600);
-    pinMode(2, OUTPUT);
+    homeSpan.enableOTA();
+    homeSpan.begin(Category::Sensors, "ESP32");
 
     new SpanAccessory();
         new Service::AccessoryInformation();
